@@ -1,7 +1,7 @@
 {
   "name": "benchmarkjs",
   "description": "Easy bechmark framework for Javascript code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "todoJS <pa@todojs.com>",
   "contributors": [
     "Pablo Almunia <pablo@thesys.es>"
