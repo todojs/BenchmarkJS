@@ -4,24 +4,18 @@ A easy bechmarking framework for Javascript code.
 
 ## Installation
 
-It don't have dependencies.
-
-In a browser:
-
-```html
-<script src="benchmarkjs.js"></script>
-```
-
-For enable Chrome’s or Node V8 native syntax for optimization check:
-
-```
-  --allow-natives-syntax
-```
-
 Installing with npm:
 
 ```bash
 $ npm i --save benchmarkjs
+```
+
+This module don't have dependencies.
+
+Use in a browser:
+
+```html
+<script src="benchmarkjs.js"></script>
 ```
 
 Use in Node.js:
@@ -30,11 +24,17 @@ Use in Node.js:
 var Benchmark = require('benchmarkjs');
 ```
 
+Enable Node.js V8 native syntax for optimization check with this parameter:
+
+```
+node --allow-natives-syntax
+```
 
 Usage example:
 
 ```js
 var benchmarkjs = require('benchmarkjs');
+
 benchmarkjs.options({
     verbose: true,
     time: 4000
@@ -59,6 +59,6 @@ console.log(benchmarkjs.results);
 ```
 
 
-## Contributor
+### Contributor
 
 Pablo Almunia 
