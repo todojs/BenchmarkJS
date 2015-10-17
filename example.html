@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BenchmarkJS Example</title>
+    <script src="benchmarkjs.js"></script>
+</head>
+<body>
+    <h1>BenchmarkJS Example</h1>
+    <pre id="results">processing...</pre>
+    <script>
+        "use strict";
+        benchmarkjs.options({
+            time: 4000
+        });
+
+        var bigArray1 = new Array(1000);
+            benchmarkjs('n < max', function () {
+            for (var n = 0, max = bigArray1.length; n < max; n++) {
+                bigArray1[n] = 0 | Math.random() * 1000;
+            }
+        });
+
+        var bigArray2 = new Array(1000);
+        benchmarkjs('n < hugeArray2.length', function () {
+            for (var n = 0; n < bigArray2.length; n++) {
+                bigArray2[n] = 0 | Math.random() * 1000;
+            }
+        });
+
+        document.getElementById('results').innerHTML = JSON.stringify(benchmarkjs.results, null, 4);
+    </script>
+</body>
+</html>

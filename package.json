@@ -1,16 +1,37 @@
 {
   "name": "benchmarkjs",
   "description": "Easy bechmark framework for Javascript code",
-  "version": "0.1.1",
-  "author": "todoJS <pa@todojs.com>",
+  "version": "0.1.2",
+  "author": {
+    "name": "todoJS",
+    "email": "pa@todojs.com"
+  },
   "contributors": [
-    "Pablo Almunia <pablo@thesys.es>"
+    {
+      "name": "Pablo Almunia",
+      "email": "pablo@thesys.es"
+    }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/todojs/BenchmarkJS.git"
+    "url": "git+https://github.com/todojs/BenchmarkJS.git"
   },
   "license": "MIT",
-  "main": "./src/index.js",
-  "keywords": "benchmark, performance, speed"
+  "main": "benchmarkjs.js",
+  "keywords": [
+    "benchmark",
+    "performance",
+    "speed"
+  ],
+  "readme": "# BenchmarkJS\n\nA easy bechmarking framework for Javascript code.\n\n## Installation\n\nInstalling with npm:\n\n```bash\n$ npm i --save benchmarkjs\n```\n\nThis module don't have dependencies.\n\nUse in a browser:\n\n```html\n<script src=\"benchmarkjs.js\"></script>\n```\n\nUse in Node.js:\n\n```js\nvar Benchmark = require('benchmarkjs');\n```\n\nEnable Node.js V8 native syntax for optimization check with this parameter:\n\n```\nnode --allow-natives-syntax\n```\n\nUsage example:\n\n```js\nvar benchmarkjs = require('benchmarkjs');\n\nbenchmarkjs.options({\n    verbose: true,\n    time: 4000\n});\n\nvar bigArray1 = new Array(1000);\nbenchmarkjs('n < max', function () {\n    for (var n = 0, max = bigArray1.length; n < max; n++) {\n        bigArray1[n] = 0 | Math.random() * 1000;\n    }\n});\n\nvar bigArray2 = new Array(1000);\nbenchmarkjs('n < hugeArray2.length', function () {\n    for (var n = 0; n < bigArray2.length; n++) {\n        bigArray2[n] = 0 | Math.random() * 1000;\n    }\n});\n\nconsole.log(benchmarkjs.results);\n\n```\n\n\n### Contributor\n\nPablo Almunia \n",
+  "readmeFilename": "README.md",
+  "gitHead": "5e138c47e07021e9dc2094a1dfe5e87e55536983",
+  "bugs": {
+    "url": "https://github.com/todojs/BenchmarkJS/issues"
+  },
+  "homepage": "https://github.com/todojs/BenchmarkJS#readme",
+  "_id": "benchmarkjs@0.1.1",
+  "scripts": {},
+  "_shasum": "e209c0aea1ee57fe6fccd4f0346ec19aff514630",
+  "_from": "benchmarkjs@*"
 }

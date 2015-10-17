@@ -2,7 +2,7 @@
 var benchmarkjs = require('./benchmarkjs.js');
 benchmarkjs.options({
     verbose: true,
-    time: 4000
+    testTime: 4000
 });
 
 var bigArray1 = new Array(1000);

@@ -107,9 +107,9 @@
         if (typeof module !== 'undefined' && module.exports) {
             module.exports = benchmark;
         }
-        exports.benchmark = benchmark;
+        exports.benchmarkjs = benchmark;
     } else {
-        root.benchmark = benchmark;
+        root.benchmarkjs = benchmark;
     }
 
 })(this);
