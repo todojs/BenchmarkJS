@@ -91,7 +91,5 @@ isOptimized can have these values:
 
 ### Contributor
 
-## Contributors
-
 * Pablo Almunia ([github:pabloalmunia](https://github.com/pabloalmunia) or [@pabloalmunia](https://twitter.com/pabloalmunia))
 
