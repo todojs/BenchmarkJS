@@ -27,7 +27,7 @@ $ npm i --save benchmarkjs
 Use in Node.js:
 
 ```js
-var Benchmark = require('benchmark');
+var Benchmark = require('benchmarkjs');
 ```
 
 

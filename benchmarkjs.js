@@ -2,7 +2,7 @@
 (function (root) {
 
     // Global variables
-    var verbose = true;
+    var verbose = false;
     var maxIterations = 0x3FFFFFFF;
     var testTime = 3000;
     var preTestIterations = 1000;
