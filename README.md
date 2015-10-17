@@ -34,29 +34,28 @@ var Benchmark = require('benchmarkjs');
 Usage example:
 
 ```js
-var suite = new Benchmark.Suite;
+var benchmarkjs = require('benchmarkjs');
+benchmarkjs.options({
+    verbose: true,
+    time: 4000
+});
 
-// add tests
-suite.add('RegExp#test', function() {
-  /o/.test('Hello World!');
-})
-.add('String#indexOf', function() {
-  'Hello World!'.indexOf('o') > -1;
-})
-// add listeners
-.on('cycle', function(event) {
-  console.log(String(event.target));
-})
-.on('complete', function() {
-  console.log('Fastest is ' + this.filter('fastest').pluck('name'));
-})
-// run async
-.run({ 'async': true });
+var bigArray1 = new Array(1000);
+benchmarkjs('n < max', function () {
+    for (var n = 0, max = bigArray1.length; n < max; n++) {
+        bigArray1[n] = 0 | Math.random() * 1000;
+    }
+});
 
-// logs:
-// => RegExp#test x 4,161,532 +-0.99% (59 cycles)
-// => String#indexOf x 6,139,623 +-1.00% (131 cycles)
-// => Fastest is String#indexOf
+var bigArray2 = new Array(1000);
+benchmarkjs('n < hugeArray2.length', function () {
+    for (var n = 0; n < bigArray2.length; n++) {
+        bigArray2[n] = 0 | Math.random() * 1000;
+    }
+});
+
+console.log(benchmarkjs.results);
+
 ```
 
 
