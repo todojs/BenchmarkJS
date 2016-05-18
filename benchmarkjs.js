@@ -56,7 +56,7 @@
         var secs = elapsed / 1000;
         var perSecondIterations = 0 | totalIterations / secs;
         if (verbose) {
-            console.log('Function %s running for %d seconds: %s checks, %s total iterations, %s iterations per second',
+            console.log('Function "%s" running for %d seconds: %s checks, %s total iterations, %s iterations per second',
                 name,
                 Math.round(secs * 100) / 100,
                 checks,
