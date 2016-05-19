@@ -54,14 +54,14 @@
 
         // Stats
         var secs = elapsed / 1000;
-        var persecondIterations = 0 | totalIterations / secs;
+        var perSecondIterations = 0 | totalIterations / secs;
         if (verbose) {
-            console.log('Function %s running for %d second: %s checks, %s total iterations, %s iterations per second',
+            console.log('Function "%s" running for %d seconds: %s checks, %s total iterations, %s iterations per second',
                 name,
                 Math.round(secs * 100) / 100,
                 checks,
                 totalIterations.toLocaleString(),
-                persecondIterations.toLocaleString()
+                perSecondIterations.toLocaleString()
             );
         }
 
@@ -71,15 +71,15 @@
             elapsed: elapsed,
             checks: checks,
             totalIterations: totalIterations,
-            persecondIterations: persecondIterations,
+            perSecondIterations: perSecondIterations,
             isOptimized: checkOptimization ? isOptimized(fn) : null
         });
         benchmark.results.sort(function (a, b) {
-            return b.persecondIterations - a.persecondIterations;}
+            return b.perSecondIterations - a.perSecondIterations;}
         );
-        var max = benchmark.results[0].persecondIterations;
+        var max = benchmark.results[0].perSecondIterations;
         benchmark.results.forEach(function (a) {
-            return a.diff = Math.round((max - a.persecondIterations) / max * 10000) / 100 + "%";
+            return a.diff = Math.round((max - a.perSecondIterations) / max * 10000) / 100 + "%";
         });
 
     };
