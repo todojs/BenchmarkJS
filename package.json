@@ -1,7 +1,7 @@
 {
   "name": "benchmarkjs",
   "description": "Easy bechmark framework for Javascript code",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
     "name": "todoJS",
     "email": "pa@todojs.com"
